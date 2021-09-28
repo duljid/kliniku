@@ -68,7 +68,6 @@
                          <span class="icon icon-bar"></span>
                     </button>
 
-                    <!-- lOGO TEXT HERE -->
                     <a href="Home" class="navbar-brand"><img width=120 src="<?php echo base_url("image/Asset 3.png") ?>" alt=""></a>
                </div>
 
@@ -78,8 +77,18 @@
                          <li><a href="#top" class="smoothScroll">Home</a></li>
                          <li><a href="#about" class="smoothScroll">About Us</a></li>
                          <li><a href="#team" class="smoothScroll">Doctors</a></li>
-                         <li><a href="<?= route_to('login')?>" class="smoothScroll">Login</a></li>
-                         <li><a href="<?= route_to('register') ?>" class="smoothScroll">Register</a></li>
+                         <!-- Kalo udah login button login & registernya ilang -->
+                         <?php if(logged_in()):?>
+                              <!-- Arah Dashboard nyesuain role user yang login -->
+                              <?php if(in_groups("Administrator")):?>
+                                   <li><a href="<?= base_url("Admin") ?>" class="smoothScroll">Dashboard</a></li>
+                              <?php elseif(in_groups("Pendaftaran")): ?>
+                                   <li><a href="<?= base_url("Pendaftaran") ?>" class="smoothScroll">Dashboard</a></li>
+                              <?php endif ?>
+                         <?php else:?>
+                              <li><a href="<?= route_to('login')?>" class="smoothScroll">Login</a></li>
+                              <li><a href="<?= route_to('register') ?>" class="smoothScroll">Register</a></li>
+                         <?php endif ?>
                     </ul>
                </div>
 

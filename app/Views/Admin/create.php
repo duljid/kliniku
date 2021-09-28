@@ -61,6 +61,9 @@
                                 aria-label="Floating label select example">
                                 <option value="Dokter">Dokter</option>
                                 <option value="Perawat">Perawat</option>
+                                <option value="Pendaftaran">Pendaftaran</option>
+                                <option value="Apotek">Apotek</option>
+                                <option value="Rumah Bersalin">Rumah Bersalin</option>
                             </select>
                             <label for="floatingSelect">Jenis Kelamin</label>
                         </div>
