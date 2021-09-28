@@ -30,8 +30,8 @@
         <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center mt-4" href="index.html">
-                <img src="<?php echo base_url("image/logo klinik.png")?>" width=170px alt="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <img src="<?php echo base_url("image/Asset 3.png")?>" width=170px alt="">
             </a>
 
             <!-- Divider -->

@@ -69,7 +69,7 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>Kliniku</a>
+                    <a href="Home" class="navbar-brand"><img width=120 src="<?php echo base_url("image/Asset 3.png") ?>" alt=""></a>
                </div>
 
                <!-- MENU LINKS -->

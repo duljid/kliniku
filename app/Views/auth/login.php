@@ -19,8 +19,8 @@
     <section class="login d-flex justify-content-center ">
         <div class="kotak">
             <div class="row" style="background-color: rgba(255, 255, 255, 0.8)">
-                <div class="col text-center" style="margin-top: 50px">
-                    <img style="width: 300px;"src="<?php echo base_url("image/logo klinik.png") ?>" alt="">
+                <div class="col text-center" style="margin-top: 170px">
+                    <img style="width: 300px;"src="<?php echo base_url("image/Asset 3.png") ?>" alt="">
                 </div>
                 <div class="col" style="height: 400px">
                     <div class="text-center mt-5">
