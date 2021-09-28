@@ -28,13 +28,12 @@ class Admin extends BaseController
     {
         return view('Admin/create');
     }
-    public function deleteakun($id)
+    public function delete_akun($id)
     {
         $ModelRegister = new ModelRegister();
 		$ModelRegister->delete($id);
         
         session()->setFlashdata('Pesan', 'Akun berhasil di Hapus');
 		return redirect()->to('/Admin/Index');
-        
     }
 }
