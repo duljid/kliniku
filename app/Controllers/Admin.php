@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\ModelRegister;
 
 class Admin extends BaseController
 {
@@ -26,5 +27,14 @@ class Admin extends BaseController
     public function buatakun()
     {
         return view('Admin/create');
+    }
+    public function deleteakun($id)
+    {
+        $ModelRegister = new ModelRegister();
+		$ModelRegister->delete($id);
+        
+        session()->setFlashdata('Pesan', 'Akun berhasil di Hapus');
+		return redirect()->to('/Admin/Index');
+        
     }
 }

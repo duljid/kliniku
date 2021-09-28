@@ -26,8 +26,8 @@
                         <td><?= $user->fullname ?></td>
                         <td><?= $user->name ?></td>
                         <td>
-                        <button type="button" class="btn btn-info">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                        <a class="btn btn-info" href="">Edit</a>
+                        <a class="btn btn-danger" href="/Admin/deleteakun/<?= $user->userid ?>">Hapus</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
