@@ -52,7 +52,9 @@
                 Interface
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Menu Sidebar -->
+            <!-- Tambahin else if aja buat user baru -->
+            <?php if(in_groups("Administrator")): ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -66,6 +68,7 @@
                     </div>
                 </div>
             </li>
+            <?php endif?>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
