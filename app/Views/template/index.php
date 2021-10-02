@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Kliniku - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('fontawesome/css/all.css')?>" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@
         <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('/home')?>">
                 <img src="<?php echo base_url("image/Asset 3.png")?>" width=170px alt="">
             </a>
 
@@ -39,7 +39,11 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
+                <?php if(in_groups("Administrator")): ?>
                 <a class="nav-link" href="<?= base_url('Admin/index') ?>">
+                <?php elseif(in_groups("Pendaftaran")): ?>
+                    <a class="nav-link" href="<?= base_url('Pendaftaran/index') ?>">
+                    <?php endif?>
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -79,20 +83,20 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?= base_url('Pendaftaran/pasien_baru') ?>">Pasien Baru</a>
-                        <a class="collapse-item" href="<?= base_url('Admin/buatakun') ?>">Poli Pasien</a>
+                        <a class="collapse-item" href="<?= base_url('Pendaftaran/poli_pasien') ?>">Poli Pasien</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-file-medical"></i>
                     <span>Laporan</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('Admin/index') ?>">Pendaftaran</a>
-                        <a class="collapse-item" href="<?= base_url('Admin/buatakun') ?>">Transaksi Pendaftaran</a>
+                        <a class="collapse-item" href="#">Pendaftaran</a>
+                        <a class="collapse-item" href="#">Transaksi Pendaftaran</a>
                     </div>
                 </div>
             </li>

@@ -83,4 +83,12 @@ class Pendaftaran extends BaseController
 		return redirect()->to('/Pendaftaran/pasien_baru');   
 
         }
+        public function poli_pasien(){    
+            $ModelPasien = new ModelPasien();
+            $query = $ModelPasien->findAll();
+            $data=[
+                'query' => $query
+            ];
+            echo view('/Pendaftaran/poli_pasien',$data);
+        }
 }
