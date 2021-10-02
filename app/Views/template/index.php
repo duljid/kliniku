@@ -69,6 +69,33 @@
                     </div>
                 </div>
             </li>
+            <?php elseif(in_groups("Pendaftaran")): ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-user"></i>
+                    <span>Pendaftaran</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('Pendaftaran/pasien_baru') ?>">Pasien Baru</a>
+                        <a class="collapse-item" href="<?= base_url('Admin/buatakun') ?>">Poli Pasien</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-user"></i>
+                    <span>Laporan</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('Admin/index') ?>">Pendaftaran</a>
+                        <a class="collapse-item" href="<?= base_url('Admin/buatakun') ?>">Transaksi Pendaftaran</a>
+                    </div>
+                </div>
+            </li>
             <?php endif?>
 
             <!-- Divider -->

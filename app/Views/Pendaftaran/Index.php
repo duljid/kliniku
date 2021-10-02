@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Halaman Pendaftaran</h1>
-</body>
-</html>
+<?= $this->extend('template/index'); ?>
+
+<?= $this->Section('content');?>
+<div class="m-4 pendaftaran">
+    <section>
+        <h1>Surprise</h1>
+    </section>
+</div>
+<?= $this->endSection(); ?>

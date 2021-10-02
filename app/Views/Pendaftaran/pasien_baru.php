@@ -1,10 +1,10 @@
 <?= $this->extend('template/index'); ?>
 
 <?= $this->Section('content');?>
-<div class="m-4">
-    <section class="admin">
+<div class="m-4 pendaftaran">
+<section>
         <div>
-            <h1 class="h3 mb-4 text-gray-800">Buat Akun</h1>
+            <h1 class="h3 mb-4 text-gray-800">Pendaftaran Pasien Baru</h1>
             <div class="text-center">
                 <?= view('Myth\Auth\Views\_message_block') ?>
             </div>
@@ -16,10 +16,10 @@
                     <div class="col">
                         <div class="mb-3 form-floating">
                             <input type="text"
-                                class="form-control <?php if(session('errors.fullname')) : ?>is-invalid<?php endif ?>"
-                                id="floatingInput" name="fullname" placeholder="Nama Lengkap"
-                                value="<?= old('fullname') ?>">
-                            <label for="floatingInput">Nama Lengkap</label>
+                                class="form-control <?php if(session('errors.nama_pasien')) : ?>is-invalid<?php endif ?>"
+                                id="floatingInput" name="nama_pasien" placeholder="Nama Lengkap"
+                                value="<?= old('nama_pasien') ?>">
+                            <label for="floatingInput">Nama Pasien</label>
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="date"
@@ -36,6 +36,8 @@
                             </select>
                             <label for="floatingSelect">Jenis Kelamin</label>
                         </div>
+                    </div>
+                    <div class="col">
                         <div class="mb-3 form-floating">
                             <input type="text"
                                 class="form-control <?php if(session('errors.phone')) : ?>is-invalid<?php endif ?>"
@@ -47,9 +49,7 @@
                             name="alamat" id=></textarea>
                             <label for="floatingTextarea">Alamat</label>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3 form-floating form-floating">
+                        <!-- <div class="mb-3 form-floating form-floating">
                             <input type="text"
                             class="form-control <?php if(session('errors.username')) : ?>is-invalid<?php endif ?>"
                             id="floatingInput" name="username" placeholder="<?=lang('Auth.username')?>"
@@ -91,7 +91,7 @@
                                     <label for="floatingPassword">Konfirmasi Password</label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <button class="btn btn-info" style="width: 100%; height: 55px" type="submit" role="button">Daftar</button>
                     </div>
                 </div>
