@@ -81,7 +81,7 @@ class Pendaftaran extends BaseController
         ]);
 		session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
 		return redirect()->to('/Pendaftaran/pasien_baru');   
-
+        
         }
         public function poli_pasien(){    
             $ModelPasien = new ModelPasien();

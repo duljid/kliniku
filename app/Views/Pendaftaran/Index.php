@@ -3,7 +3,7 @@
 <?= $this->Section('content');?>
 <div class="m-4 pendaftaran">
     <section>
-        <h1>Surprise</h1>
+        <h1>Under Development</h1>
     </section>
 </div>
 <?= $this->endSection(); ?>
