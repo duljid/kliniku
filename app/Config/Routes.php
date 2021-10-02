@@ -34,6 +34,13 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:Administrator']);
 $routes->get('/Admin/index', 'Admin::index', ['filter' => 'role:Administrator']);
+$routes->get('/Admin/buatakun', 'Admin::index', ['filter' => 'role:Administrator']);
+$routes->get('/Admin/delete_akun', 'Admin::index', ['filter' => 'role:Administrator']);
+$routes->get('/pendaftaran', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
+$routes->get('/Pendaftaran/index', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
+$routes->get('/Pendaftaran/pasien_baru', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
+$routes->get('/Pendaftaran/polu_pasien', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
+
 
 /*
  * --------------------------------------------------------------------
