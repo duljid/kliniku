@@ -12,6 +12,7 @@
         <div class="kotak p-5" style="background-color: white">
             <form action="<?= route_to('register') ?>" method="post">
                 <?= csrf_field() ?>
+                <h1 class="h5 mb-4 text-gray-800">Kode Pasien <span class="text-info"><?= $kode_pasien?></span></h1>
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 form-floating">
