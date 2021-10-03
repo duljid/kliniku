@@ -12,6 +12,7 @@
      <meta name="author" content="Tooplate">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+     <link rel="shortcut icon" href="<?php echo base_url('image/icon.png')?>">
      <link rel="stylesheet" href="<?php echo base_url('css/bootstrap.min.css')?>">
      <link rel="stylesheet" href="<?php echo base_url('fontawesome/css/all.css')?>">
      <link rel="stylesheet" href="<?php echo base_url('css/animate.css')?>">
