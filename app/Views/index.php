@@ -257,7 +257,6 @@
                     <div class="col-md-3 col-sm-4">
                          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
                               <img src="<?php echo base_url('image/pcrswab.PNG')?>" class="img-responsive" alt="">
-
                               <div class="team-info">
                                    <h3>PCR Swap</h3>
                                    <p>Swap PCR TEST COVID-19 (Hasil 1-Hari)</p>
@@ -266,7 +265,6 @@
                                         <h3>RP.495.000</h3>
                                    </div>
                               </div>
-
                          </div>
                     </div>
                     <div class="col-md-3 col-sm-4">
@@ -382,14 +380,14 @@
      </footer>
 
      <!-- SCRIPTS -->
-     <script src="js/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/jquery.sticky.js"></script>
-     <script src="js/jquery.stellar.min.js"></script>
-     <script src="js/wow.min.js"></script>
-     <script src="js/smoothscroll.js"></script>
-     <script src="js/owl.carousel.min.js"></script>
-     <script src="js/custom.js"></script>
+     <script src="<?php echo base_url('js/jquery.js') ?>"></script>
+     <script src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
+     <script src="<?php echo base_url('js/jquery.sticky.js') ?>"></script>
+     <script src="<?php echo base_url('js/jquery.stellar.min.js') ?>"></script>
+     <script src="<?php echo base_url('js/wow.min.js') ?>"></script>
+     <script src="<?php echo base_url('js/smoothscroll.js') ?>"></script>
+     <script src="<?php echo base_url('js/owl.carousel.min.js') ?>"></script>
+     <script src="<?php echo base_url('js/custom.js') ?>"></script>
 <!-- < Start of Tawk.to Script -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
