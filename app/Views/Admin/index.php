@@ -7,7 +7,7 @@
             <h1 class="h3 mb-4 text-gray-800">Daftar Users</h1>
         </div>
         <div class="kotak p-5">
-            <table class="table">
+            <table class="table" id="data-list">
                 <thead>
                     <tr>
                         <th scope="col">No</th>

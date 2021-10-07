@@ -7,7 +7,7 @@
             <h1 class="h3 mb-4 text-gray-800">Pendaftaran Poli Pasien</h1>
         </div>
         <div class="kotak p-5">
-            <table class="table">
+            <table class="table" id="data-list">
                 <thead>
                     <tr class="text-center">
                         <th scope="col">Kode Pasien</th>
@@ -35,5 +35,4 @@
         </div>
     </section>
 </div>
-
 <?= $this->endSection(); ?>

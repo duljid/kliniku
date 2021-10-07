@@ -21,6 +21,8 @@
     <!-- Custom styles for this template-->
     <link rel="stylesheet" href="<?php echo base_url('bootstrap5/css/bootstrap.min.css') ?>">
     <link href="<?php echo base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('js/datatables/dataTables.css')?>">  
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">   -->
     <link href="<?php echo base_url('hmm.css')?>" rel="stylesheet">
 
 </head>
@@ -244,7 +246,7 @@
         <!-- End of Sidebar -->
 
     </div>
-    
+        
         <!-- Bootstrap core JavaScript-->
         <script src="<?php echo base_url('js/jquery/jquery.min.js')?>"></script>
         <script src="<?php echo base_url('js/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
@@ -261,7 +263,16 @@
         <!-- Page level custom scripts -->
         <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
         <script src="<?php echo base_url('js/demo/chart-pie-demo.js')?>"></script>
+        
+        <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
+        <script type="text/javascript" charset="utf8" src="<?= base_url('js/dataTables/jquery.dataTables.js')?>"></script>
 
+        <script>
+            $(document).ready( function () {
+                $('#data-list').DataTable();
+            } );
+        </script>
+        
 </body>
 
 </html>
