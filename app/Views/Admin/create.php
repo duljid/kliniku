@@ -15,11 +15,22 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 form-floating">
+                            <select class="form-select" name="roles" id="akun"
+                                aria-label="Floating label select example">
+                                <option value="Perawat">Perawat</option>
+                                <option value="Dokter">Dokter</option>
+                                <option value="Pendaftaran">Pendaftaran</option>
+                                <option value="Apotek">Apotek</option>
+                                <option value="Rumah Bersalin">Rumah Bersalin</option>
+                            </select>
+                            <label for="floatingSelect">Jenis Akun</label>
+                        </div>
+                        <div class="mb-3 form-floating">
                             <input type="text"
                                 class="form-control <?php if(session('errors.fullname')) : ?>is-invalid<?php endif ?>"
                                 id="floatingInput" name="fullname" placeholder="Nama Lengkap"
                                 value="<?= old('fullname') ?>">
-                            <label for="floatingInput">Nama Lengkap</label>
+                            <label for="floatingInput" id="fullname">Nama Lengkap</label>
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="date"
@@ -37,12 +48,6 @@
                             <label for="floatingSelect">Jenis Kelamin</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="text"
-                                class="form-control <?php if(session('errors.phone')) : ?>is-invalid<?php endif ?>"
-                                id="floatingInput" name="phone" placeholder="No Telepon" value="<?= old('phone') ?>">
-                            <label for="floatingInput">No Telepon</label>
-                        </div>
-                        <div class="mb-3 form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
                             name="alamat" id=></textarea>
                             <label for="floatingTextarea">Alamat</label>
@@ -57,15 +62,10 @@
                             <label for="floatingInput">Username</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <select class="form-select" name="roles" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option value="Dokter">Dokter</option>
-                                <option value="Perawat">Perawat</option>
-                                <option value="Pendaftaran">Pendaftaran</option>
-                                <option value="Apotek">Apotek</option>
-                                <option value="Rumah Bersalin">Rumah Bersalin</option>
-                            </select>
-                            <label for="floatingSelect">Jenis Kelamin</label>
+                            <input type="text"
+                                class="form-control <?php if(session('errors.phone')) : ?>is-invalid<?php endif ?>"
+                                id="floatingInput" name="phone" placeholder="No Telepon" value="<?= old('phone') ?>">
+                            <label for="floatingInput">No Telepon</label>
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="email"
@@ -99,4 +99,20 @@
         </div>
     </section>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('#akun').on('change', function() {
+            if($(this).val() == 'Dokter'){
+                document.getElementById('fullname').innerHTML = 'Nama Dokter';
+            }else if($(this).val() == 'Apotek'){
+                document.getElementById('fullname').innerHTML = 'Nama Apotek';
+            }else if($(this).val() == 'Rumah Bersalin'){
+                document.getElementById('fullname').innerHTML = 'Nama Rumah Bersalin';
+            }else{
+                document.getElementById('fullname').innerHTML = 'Nama Lengkap';
+            }
+        });
+    });
+</script>
 <?= $this->endSection(); ?>
