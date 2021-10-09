@@ -33,13 +33,12 @@
                             <label for="floatingInput" id="fullname">Nama Lengkap</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="date"
-                                class="form-control <?php if(session('errors.tanggal_lahir')) : ?>is-invalid<?php endif ?>"
-                                id="floatingInput" name="tanggal_lahir" placeholder="Tanggal Lahir"
-                                value="<?= old('tanggal_lahir') ?>">
-                            <label for="floatingInput">Tanggal Lahir</label>
+                            <input type="text"
+                                class="form-control <?php if(session('errors.phone')) : ?>is-invalid<?php endif ?>"
+                                id="floatingInput" name="phone" placeholder="No Telepon" value="<?= old('phone') ?>">
+                            <label for="floatingInput">No Telepon</label>
                         </div>
-                        <div class="mb-3 form-floating">
+                        <div class="mb-3 form-floating" id="jenis_kelamin">
                             <select class="form-select" name="jenis_kelamin" id="floatingSelect"
                                 aria-label="Floating label select example">
                                 <option value="Laki - laki">Laki - Laki</option>
@@ -54,18 +53,19 @@
                         </div>
                     </div>
                     <div class="col">
+                        <div class="mb-3 form-floating" id="tanggal_lahir">
+                            <input type="date"
+                                class="form-control <?php if(session('errors.tanggal_lahir')) : ?>is-invalid<?php endif ?>"
+                                id="input_tanggal" name="tanggal_lahir" placeholder="Tanggal Lahir"
+                                value="<?= old('tanggal_lahir') ?>">
+                            <label for="floatingInput">Tanggal Lahir</label>
+                        </div>
                         <div class="mb-3 form-floating form-floating">
                             <input type="text"
                             class="form-control <?php if(session('errors.username')) : ?>is-invalid<?php endif ?>"
                             id="floatingInput" name="username" placeholder="<?=lang('Auth.username')?>"
                             value="<?= old('username') ?>">
                             <label for="floatingInput">Username</label>
-                        </div>
-                        <div class="mb-3 form-floating">
-                            <input type="text"
-                                class="form-control <?php if(session('errors.phone')) : ?>is-invalid<?php endif ?>"
-                                id="floatingInput" name="phone" placeholder="No Telepon" value="<?= old('phone') ?>">
-                            <label for="floatingInput">No Telepon</label>
                         </div>
                         <div class="mb-3 form-floating">
                             <input type="email"
@@ -105,12 +105,35 @@
         $('#akun').on('change', function() {
             if($(this).val() == 'Dokter'){
                 document.getElementById('fullname').innerHTML = 'Nama Dokter';
+                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "visible").css("position" , "inherit");
+                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "visible").css("position" , "inherit");
             }else if($(this).val() == 'Apotek'){
+                // ganti place holder
                 document.getElementById('fullname').innerHTML = 'Nama Apotek';
+
+                // ngilangin tanggal lahir
+                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "hidden").css("position" , "absolute");
+                
+                // default tanggal
+                var now = new Date();
+                var day = ("0" + now.getDate()).slice(-2);
+                var month = ("0" + (now.getMonth() + 1)).slice(-2);
+                var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+                $('#input_tanggal').val(today);
+
             }else if($(this).val() == 'Rumah Bersalin'){
                 document.getElementById('fullname').innerHTML = 'Nama Rumah Bersalin';
+                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "hidden").css("position" , "absolute");
+
+                // default tanggal
+                var now = new Date();
+                var day = ("0" + now.getDate()).slice(-2);
+                var month = ("0" + (now.getMonth() + 1)).slice(-2);
+                var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+                $('#input_tanggal').val(today);
             }else{
                 document.getElementById('fullname').innerHTML = 'Nama Lengkap';
+                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "visible").css("position" , "inherit");
             }
         });
     });

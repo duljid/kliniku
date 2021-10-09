@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
-use App\Models\ModelRegister;
 
 class Admin extends BaseController
 {

@@ -85,6 +85,8 @@
                                    <li><a href="<?= base_url("Admin") ?>" class="smoothScroll">Dashboard</a></li>
                               <?php elseif(in_groups("Pendaftaran")): ?>
                                    <li><a href="<?= base_url("Pendaftaran") ?>" class="smoothScroll">Dashboard</a></li>
+                              <?php elseif(in_groups("Dokter")): ?>
+                                   <li><a href="<?= base_url("Dokter") ?>" class="smoothScroll">Dashboard</a></li>
                               <?php endif ?>
                          <?php else:?>
                               <li><a href="<?= route_to('login')?>" class="smoothScroll">Login</a></li>

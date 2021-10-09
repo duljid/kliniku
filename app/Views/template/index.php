@@ -54,6 +54,8 @@
                 <a class="nav-link" href="<?= base_url('Admin/index') ?>">
                 <?php elseif(in_groups("Pendaftaran")): ?>
                     <a class="nav-link" href="<?= base_url('Pendaftaran/pasien_baru') ?>">
+                    <?php elseif(in_groups("Dokter")): ?>
+                    <a class="nav-link" href="<?= base_url('Dokter') ?>">
                     <?php endif?>
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
