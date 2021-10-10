@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Okt 2021 pada 08.42
+-- Waktu pembuatan: 10 Okt 2021 pada 08.57
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -113,7 +113,8 @@ CREATE TABLE `auth_groups_users` (
 INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 (1, 40),
 (2, 51),
-(3, 52);
+(5, 56),
+(7, 59);
 
 -- --------------------------------------------------------
 
@@ -259,7 +260,51 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (122, '::1', 'pendaftaran@gmail.com', 51, '2021-10-02 20:58:57', 1),
 (123, '::1', 'admin@gmail.com', 40, '2021-10-02 22:43:11', 1),
 (124, '::1', 'admin@gmail.com', 40, '2021-10-02 22:50:26', 1),
-(125, '::1', 'admin@gmail.com', 40, '2021-10-05 01:38:50', 1);
+(125, '::1', 'admin@gmail.com', 40, '2021-10-05 01:38:50', 1),
+(126, '::1', 'admin@gmail.com', 40, '2021-10-06 04:11:26', 1),
+(127, '::1', 'pendaftaran@gmail.com', 51, '2021-10-06 05:16:22', 1),
+(128, '::1', 'pendaftaran@gmail.com', 51, '2021-10-06 07:57:35', 1),
+(129, '::1', 'admin@gmail.com', 40, '2021-10-06 08:06:13', 1),
+(130, '::1', 'pendaftaran', NULL, '2021-10-06 08:30:48', 0),
+(131, '::1', 'pendaftaran@gmail.com', 51, '2021-10-06 08:30:55', 1),
+(132, '::1', 'admin@gmail.com', 40, '2021-10-06 10:19:39', 1),
+(133, '::1', 'pendaftaran@gmail.com', 51, '2021-10-06 10:25:14', 1),
+(134, '::1', 'admin', NULL, '2021-10-06 10:31:01', 0),
+(135, '::1', 'admin@gmail.com', 40, '2021-10-06 10:31:06', 1),
+(136, '::1', 'admin@gmail.com', 40, '2021-10-06 20:49:31', 1),
+(137, '::1', 'pendaftaran@gmail.com', 51, '2021-10-06 20:54:49', 1),
+(138, '::1', 'admin@gmail.com', 40, '2021-10-06 21:49:23', 1),
+(139, '::1', 'pendaftaran@gmail.com', 51, '2021-10-07 20:19:14', 1),
+(140, '::1', 'admin@gmail.com', 40, '2021-10-07 20:21:08', 1),
+(141, '::1', 'admin', NULL, '2021-10-08 08:07:19', 0),
+(142, '::1', 'admin@gmail.com', 40, '2021-10-08 08:07:25', 1),
+(143, '::1', 'admin', NULL, '2021-10-08 19:02:55', 0),
+(144, '::1', 'admin@gmail.com', 40, '2021-10-08 19:03:04', 1),
+(145, '::1', 'pendaftaran@gmail.com', 51, '2021-10-08 19:29:46', 1),
+(146, '::1', 'admin@gmail.com', 40, '2021-10-08 19:32:27', 1),
+(147, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-08 19:33:42', 1),
+(148, '::1', 'admin@gmail.com', 40, '2021-10-08 20:04:17', 1),
+(149, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-08 20:04:54', 1),
+(150, '::1', 'admin@gmail.com', 40, '2021-10-08 20:07:49', 1),
+(151, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-08 23:33:02', 1),
+(152, '::1', 'pendaftaran@gmail.com', 51, '2021-10-08 23:33:48', 1),
+(153, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-08 23:36:08', 1),
+(154, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-09 04:57:46', 1),
+(155, '::1', 'admin@gmail.com', 40, '2021-10-09 05:31:15', 1),
+(156, '::1', 'admin@gmail.com', 40, '2021-10-09 11:05:35', 1),
+(157, '::1', 'admin', NULL, '2021-10-09 21:04:28', 0),
+(158, '::1', 'admin@gmail.com', 40, '2021-10-09 21:04:35', 1),
+(159, '::1', 'admin@gmail.com', 40, '2021-10-10 01:28:52', 1),
+(160, '::1', 'kimiafarma@gmail.com', 57, '2021-10-10 01:40:02', 1),
+(161, '::1', 'admin@gmail.com', 40, '2021-10-10 01:45:23', 1),
+(162, '::1', 'apotek@gmail.com', 58, '2021-10-10 01:46:35', 1),
+(163, '::1', 'apotek', NULL, '2021-10-10 01:54:11', 0),
+(164, '::1', 'apotek', NULL, '2021-10-10 01:54:24', 0),
+(165, '::1', 'apotek', NULL, '2021-10-10 01:54:34', 0),
+(166, '::1', 'apotek', NULL, '2021-10-10 01:54:43', 0),
+(167, '::1', 'apotek', NULL, '2021-10-10 01:54:54', 0),
+(168, '::1', 'admin@gmail.com', 40, '2021-10-10 01:55:04', 1),
+(169, '::1', 'apotek@gmail.com', 59, '2021-10-10 01:56:34', 1);
 
 -- --------------------------------------------------------
 
@@ -319,6 +364,29 @@ CREATE TABLE `auth_users_permissions` (
   `user_id` int(11) UNSIGNED NOT NULL DEFAULT 0,
   `permission_id` int(11) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `dokter`
+--
+
+CREATE TABLE `dokter` (
+  `jenis_dokter` varchar(50) DEFAULT NULL,
+  `jadwal_praktek` varchar(255) DEFAULT NULL,
+  `id_dokter` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `dokter`
+--
+
+INSERT INTO `dokter` (`jenis_dokter`, `jadwal_praktek`, `id_dokter`, `created_at`, `updated_at`, `deleted_at`, `id`) VALUES
+('Dokter Umum', 'Senin', 56, '2021-10-09 05:29:32', '2021-10-09 05:29:32', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -409,7 +477,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `username`, `fullname`, `tanggal_lahir`, `jenis_kelamin`, `phone`, `alamat`, `user_image`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (40, 'admin@gmail.com', 'admin', 'Demo Akun Administrator', '2021-09-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$LtKwJ2fFVMAWr..Nx9dEWOnQgPiB.kfS8mdK.2Lc8/z1lwpqfemoO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-18 23:27:45', '2021-09-18 23:27:45', NULL),
 (51, 'pendaftaran@gmail.com', 'pendaftaran', 'Demo Akun Pendaftaran', '2021-09-07', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$pQ.yb4oWp2CBIyXkgcjfUOTs/Q1s6jgBs6hRNOcFh.v01zVwaESie', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-29 09:27:02', '2021-09-29 09:27:02', NULL),
-(52, 'apotek@gmail.com', 'apotek', 'Demo Akun Apotek', '2021-10-01', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$tgnnigg.4DIXcPMn5s80Y.cPPckjVlJyQRlI.tOI7aKjKYcanb8RO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-05 01:40:43', '2021-10-05 01:40:43', NULL);
+(56, 'abdulmajidard@gmail.com', 'duljid', 'Abdul Majid Ardiansyah', '2001-03-09', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$P6IVlOfNWK9.ciUJd9J/kO7z.KgZ0AfLiJVGB6cEoJgK6deGCSbUO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-08 19:32:58', '2021-10-08 19:32:58', NULL),
+(59, 'apotek@gmail.com', 'apotek', 'Demo Akun Apotek', '2021-10-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$ocgAYiNBgMEMm949PG3tpeveR9Sxhj1VcUC7IVqSoq77LTgC59WVu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-10 01:56:09', '2021-10-10 01:56:09', NULL);
 
 --
 -- Indexes for dumped tables
@@ -483,6 +552,13 @@ ALTER TABLE `auth_users_permissions`
   ADD KEY `user_id_permission_id` (`user_id`,`permission_id`);
 
 --
+-- Indeks untuk tabel `dokter`
+--
+ALTER TABLE `dokter`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_dokter` (`id_dokter`);
+
+--
 -- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -528,7 +604,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -549,6 +625,12 @@ ALTER TABLE `auth_tokens`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `dokter`
+--
+ALTER TABLE `dokter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -564,7 +646,7 @@ ALTER TABLE `pasien`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
