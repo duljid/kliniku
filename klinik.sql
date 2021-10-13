@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Okt 2021 pada 08.57
+-- Waktu pembuatan: 13 Okt 2021 pada 03.32
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -114,6 +114,7 @@ INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 (1, 40),
 (2, 51),
 (5, 56),
+(6, 60),
 (7, 59);
 
 -- --------------------------------------------------------
@@ -304,7 +305,11 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (166, '::1', 'apotek', NULL, '2021-10-10 01:54:43', 0),
 (167, '::1', 'apotek', NULL, '2021-10-10 01:54:54', 0),
 (168, '::1', 'admin@gmail.com', 40, '2021-10-10 01:55:04', 1),
-(169, '::1', 'apotek@gmail.com', 59, '2021-10-10 01:56:34', 1);
+(169, '::1', 'apotek@gmail.com', 59, '2021-10-10 01:56:34', 1),
+(170, '::1', 'admin@gmail.com', 40, '2021-10-10 08:42:04', 1),
+(171, '::1', 'pendaftaran@gmail.com', 51, '2021-10-10 08:48:49', 1),
+(172, '::1', 'pendaftaran@gmail.com', 51, '2021-10-12 09:32:58', 1),
+(173, '::1', 'admin@gmail.com', 40, '2021-10-12 20:16:04', 1);
 
 -- --------------------------------------------------------
 
@@ -435,8 +440,8 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`kode_pasien`, `nama_pasien`, `alamat_pasien`, `tanggallahir_pasien`, `umur_pasien`, `telepon_pasien`, `jeniskelamin_pasien`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Abdul Majid', '', '2011-03-02', 10, '082130302521', '', '2021-10-02 03:18:45', '2021-10-02 03:18:45', NULL),
-(2, 'Jamaludin', '', '2016-02-10', 5, '082130302521', 'Laki - laki', '2021-10-02 03:20:12', '2021-10-02 03:20:12', NULL),
+(1, 'Abdul Majid', ' Villa Asri 2 Blok P18 ', '2011-03-02', 10, '082130302521', '', '2021-10-02 03:18:45', '2021-10-02 03:18:45', NULL),
+(2, 'Jamaludin', ' Villa Asri 2 Blok P18 ', '2016-02-10', 5, '082130302521', 'Laki - laki', '2021-10-02 03:20:12', '2021-10-02 03:20:12', NULL),
 (3, 'Abdul Majid', '', '2021-10-05', -1, '082130302521', 'Perempuan', '2021-10-02 03:22:20', '2021-10-02 03:22:20', NULL),
 (4, 'affafaefea', '', '0000-00-00', 51, '', 'Laki - laki', '2021-10-02 03:41:53', '2021-10-02 03:41:53', NULL);
 
@@ -478,7 +483,8 @@ INSERT INTO `users` (`id`, `email`, `username`, `fullname`, `tanggal_lahir`, `je
 (40, 'admin@gmail.com', 'admin', 'Demo Akun Administrator', '2021-09-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$LtKwJ2fFVMAWr..Nx9dEWOnQgPiB.kfS8mdK.2Lc8/z1lwpqfemoO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-18 23:27:45', '2021-09-18 23:27:45', NULL),
 (51, 'pendaftaran@gmail.com', 'pendaftaran', 'Demo Akun Pendaftaran', '2021-09-07', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$pQ.yb4oWp2CBIyXkgcjfUOTs/Q1s6jgBs6hRNOcFh.v01zVwaESie', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-29 09:27:02', '2021-09-29 09:27:02', NULL),
 (56, 'abdulmajidard@gmail.com', 'duljid', 'Abdul Majid Ardiansyah', '2001-03-09', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$P6IVlOfNWK9.ciUJd9J/kO7z.KgZ0AfLiJVGB6cEoJgK6deGCSbUO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-08 19:32:58', '2021-10-08 19:32:58', NULL),
-(59, 'apotek@gmail.com', 'apotek', 'Demo Akun Apotek', '2021-10-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$ocgAYiNBgMEMm949PG3tpeveR9Sxhj1VcUC7IVqSoq77LTgC59WVu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-10 01:56:09', '2021-10-10 01:56:09', NULL);
+(59, 'apotek@gmail.com', 'apotek', 'Demo Akun Apotek', '2021-10-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$ocgAYiNBgMEMm949PG3tpeveR9Sxhj1VcUC7IVqSoq77LTgC59WVu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-10 01:56:09', '2021-10-10 01:56:09', NULL),
+(60, 'rumahbersalin@gmail.com', 'rumahbersalin', 'Demo Rumah Bersalin', '2021-10-13', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$8P/gznfdsJrzPpsqSM4B6uy8sHAk9rnER8UZhagRDpRu7mc9.MgdC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-12 20:17:23', '2021-10-12 20:17:23', NULL);
 
 --
 -- Indexes for dumped tables
@@ -604,7 +610,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -646,7 +652,7 @@ ALTER TABLE `pasien`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

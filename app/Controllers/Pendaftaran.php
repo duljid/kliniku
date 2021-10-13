@@ -82,13 +82,34 @@ class Pendaftaran extends BaseController
 		session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
 		return redirect()->to('/Pendaftaran/pasien_baru');   
         
-        }
-        public function poli_pasien(){    
-            $ModelPasien = new ModelPasien();
-            $query = $ModelPasien->findAll();
-            $data=[
-                'query' => $query
+    }
+    public function poli_pasien()
+    {    
+        $ModelPasien = new ModelPasien();
+        $query = $ModelPasien->findAll();
+        $data=[
+            'query' => $query
+        ];
+        echo view('/Pendaftaran/poli_pasien',$data);
+    }
+    public function form_poli_pasien($id)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('pasien');
+        $query   = $builder->getWhere(['kode_pasien' => $id]);
+        
+        foreach ($query->getResultArray() as $row){
+            $data = [
+                'nama_pasien' => $row['nama_pasien'],
+                'alamat_pasien' => $row['alamat_pasien'],
+                'tanggal_lahir' => $row['tanggallahir_pasien'],
+                'umur_pasien' => $row['umur_pasien'],
+                'jenis_kelamin' => $row['jeniskelamin_pasien'],
+                'kode_pasien' => $row['kode_pasien'],
+                'telepon_pasien' => $row['telepon_pasien']
+
             ];
-            echo view('/Pendaftaran/poli_pasien',$data);
-        }
+        }   
+        echo view('/Pendaftaran/form_poli_pasien', $data);
+    }
 }

@@ -26,7 +26,7 @@
                         <td><?= $row['jeniskelamin_pasien'] ?></td>
                         <td><?= $row['telepon_pasien'] ?></td>
                         <td class="text-center">
-                        <a class="btn btn-info" href="#">Daftar</a>
+                        <a class="btn btn-info" href="<?= base_url()?>/Pendaftaran/form_poli_pasien/<?= $row['kode_pasien'] ?>">Daftar</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
