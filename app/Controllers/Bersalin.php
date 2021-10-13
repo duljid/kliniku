@@ -2,21 +2,35 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Controller;
 use App\Models\ModelBersalin;
 
-class Rumahbersalin extends BaseController
+class Bersalin extends Controller
 {
     // public function index()
     // {
-    //     return view('Rumahbersalin/index');
-    // }
+    //     // $usermodel = new UserModel();
+	// 	// $data['users'] = $usermodel->findAll();
 
+    //     $db = \Config\Database::connect();
+        
+    //     $builder = $db->table('bersalin');
+    //     $builder->select('users.id as userid, username, fullname, name');
+    //     $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+    //     $builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+    //     $query = $builder->get();
+
+    //     $data['bersalin'] = $query->getResult();
+
+        
+    //     return view('Bersalin/index', $data);
+    // }
     public function index()
     {
         $model = new ModelBersalin;
         $data['title']     = 'Data Pasien Bersalin';
         $data['getBarang'] = $model->getBarang();
-        echo view('Rumahbersalin/index', $data);
+        echo view('Bersalin/index', $data);
         
     }
     public function jadwal()
@@ -24,7 +38,7 @@ class Rumahbersalin extends BaseController
         $model = new ModelBersalin;
         $data['title']     = 'Jadwal Pasien Bersalin';
         $data['getBarang'] = $model->getBarang();
-        echo view('Rumahbersalin/jadwal', $data);
+        echo view('jadwal', $data);
         
     }
     public function laporan()
@@ -33,13 +47,13 @@ class Rumahbersalin extends BaseController
         $users = new ModelBersalin();
         $cari = $this->request->getGet('cari');
         $data = $users->where('status', $cari)->findAll();
-        return view('Rumahbersalin/laporan', compact('data'));
+        return view('laporan', compact('data'));
         
     }
     public function tambah()
     {
         $data['title']     = '+ Pasien Baru';
-        echo view('Rumahbersalin/tambah', $data);
+        echo view('tambah', $data);
         
     }
 
@@ -57,7 +71,7 @@ class Rumahbersalin extends BaseController
         $model->saveBarang($data);
         echo '<script>
                 alert("Sukses Tambah Data Pasien");
-                window.location="' . base_url('Rumahbersalin') . '"
+                window.location="' . base_url('Bersalin') . '"
             </script>';
     }
 
@@ -73,7 +87,7 @@ class Rumahbersalin extends BaseController
 
             echo '<script>
                     alert("ID barang ' . $id . ' Tidak ditemukan");
-                    window.location="' . base_url('Rumahbersalin') . '"
+                    window.location="' . base_url('barang') . '"
                 </script>';
         }
     }
@@ -92,9 +106,10 @@ class Rumahbersalin extends BaseController
         $model->editBarang($data, $id);
         echo '<script>
                 alert("Sukses Edit Data Pasien");
-                window.location="' . base_url('Rumahbersalin') . '"
+                window.location="' . base_url('Bersalin') . '"
             </script>';
     }
 
 
+    
 }

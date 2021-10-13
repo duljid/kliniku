@@ -18,21 +18,23 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-        <!-- CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">   -->
-        <link href="<?php echo base_url('hmm.css')?>" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?= base_url('js/datatables/dataTables.css')?>"> 
-        <link rel="stylesheet" href="<?php echo base_url('bootstrap5/css/bootstrap.min.css') ?>">
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">   -->
+    <link href="<?php echo base_url('hmm.css')?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('js/datatables/dataTables.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('bootstrap5/css/bootstrap.min.css') ?>">
 
-        <!-- Custom styles for this template-->
-        <link href="<?php echo base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
-        
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <!-- Jquery UI -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-        
+    <!-- Custom styles for this template-->
+    <link href="<?php echo base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <!-- Jquery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 </head>
 
 <body id="page-top">
@@ -52,17 +54,17 @@
             <li class="nav-item">
                 <?php if(in_groups("Administrator")): ?>
                 <a class="nav-link" href="<?= base_url('Admin/index') ?>">
-                <?php elseif(in_groups("Pendaftaran")): ?>
+                    <?php elseif(in_groups("Pendaftaran")): ?>
                     <a class="nav-link" href="<?= base_url('Pendaftaran/pasien_baru') ?>">
-                    <?php elseif(in_groups("Dokter")): ?>
-                    <a class="nav-link" href="<?= base_url('Dokter') ?>">
-                    <?php elseif(in_groups("Apotek")): ?>
-                    <a class="nav-link" href="<?= base_url('Apotek') ?>">
-                    <?php elseif(in_groups("Rumah Bersalin")): ?>
-                    <a class="nav-link" href="<?= base_url('Rumah Bersalin') ?>">
-                    <?php endif?>
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                        <?php elseif(in_groups("Dokter")): ?>
+                        <a class="nav-link" href="<?= base_url('Dokter') ?>">
+                            <?php elseif(in_groups("Apotek")): ?>
+                            <a class="nav-link" href="<?= base_url('Apotek') ?>">
+                                <?php elseif(in_groups("Rumah Bersalin")): ?>
+                                <a class="nav-link" href="<?= base_url('Rumah Bersalin') ?>">
+                                    <?php endif?>
+                                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                                    <span>Dashboard</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -113,6 +115,34 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#">Pendaftaran</a>
                         <a class="collapse-item" href="#">Transaksi Pendaftaran</a>
+                    </div>
+                </div>
+            </li>
+            <?php elseif(in_groups("Rumah Bersalin")): ?>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-user"></i>
+                    <span>DATA - DATA PASIEN</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('Rumahbersalin/index') ?>">Master Data</a>
+                        <a class="collapse-item" href="<?= base_url('Rumahbersalin/jadwal') ?>">Jadwal Pasien</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Laporan</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('Rumahbersalin/laporan') ?>">Filter Laporan /
+                            History</a>
+
                     </div>
                 </div>
             </li>
@@ -249,7 +279,7 @@
 
                     </ul>
 
-                </nav>                
+                </nav>
                 <!-- End of Topbar -->
                 <?= $this->renderSection('content'); ?>
 
@@ -260,33 +290,33 @@
         <!-- End of Sidebar -->
 
     </div>
-        
-        <!-- Bootstrap core JavaScript-->
-        <script src="<?php echo base_url('js/jquery/jquery.min.js')?>"></script>
-        <script src="<?php echo base_url('js/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="<?php echo base_url('js/jquery-easing/jquery.easing.min.js')?>"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url('js/jquery/jquery.min.js')?>"></script>
+    <script src="<?php echo base_url('js/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="<?php echo base_url('js/sb-admin-2.min.js') ?>"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url('js/jquery-easing/jquery.easing.min.js')?>"></script>
 
-        <!-- Page level plugins -->
-        <script src="<?php echo base_url('js/chart.js/Chart.min.js')?>"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url('js/sb-admin-2.min.js') ?>"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
-        <script src="<?php echo base_url('js/demo/chart-pie-demo.js')?>"></script>
-        
-        <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
-        <script type="text/javascript" charset="utf8" src="<?= base_url('js/dataTables/jquery.dataTables.js')?>"></script>
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url('js/chart.js/Chart.min.js')?>"></script>
 
-        <script>
-            $(document).ready( function () {
-                $('#data-list').DataTable();
-            } );
-        </script>
-        
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
+    <script src="<?php echo base_url('js/demo/chart-pie-demo.js')?>"></script>
+
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
+    <script type="text/javascript" charset="utf8" src="<?= base_url('js/dataTables/jquery.dataTables.js')?>"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#data-list').DataTable();
+    });
+    </script>
+
 </body>
 
 </html>
