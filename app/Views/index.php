@@ -89,6 +89,8 @@
                                    <li><a href="<?= base_url("Dokter") ?>" class="smoothScroll">Dashboard</a></li>
                               <?php elseif(in_groups("Apotek")): ?>
                                    <li><a href="<?= base_url("Apotek") ?>" class="smoothScroll">Dashboard</a></li>
+                              <?php elseif(in_groups("Rumah Bersalin")): ?>
+                                   <li><a href="<?= base_url("Rumahbersalin") ?>" class="smoothScroll">Dashboard</a></li>
                               <?php endif ?>
                          <?php else:?>
                               <li><a href="<?= route_to('login')?>" class="smoothScroll">Login</a></li>

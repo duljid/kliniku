@@ -58,6 +58,8 @@
                     <a class="nav-link" href="<?= base_url('Dokter') ?>">
                     <?php elseif(in_groups("Apotek")): ?>
                     <a class="nav-link" href="<?= base_url('Apotek') ?>">
+                    <?php elseif(in_groups("Rumah Bersalin")): ?>
+                    <a class="nav-link" href="<?= base_url('Rumah Bersalin') ?>">
                     <?php endif?>
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
