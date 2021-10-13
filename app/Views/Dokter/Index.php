@@ -20,6 +20,7 @@
                             <h6><?= user()->fullname ?></h6>
                             <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
+                        tes
                         <div class="mb-3 form-floating">
                             <select class="form-select" name="jenis_dokter" id="floatingSelect"
                                 aria-label="Floating label select example">
