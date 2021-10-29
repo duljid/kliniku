@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\ModelPasien;
+use App\Models\ModelPasienBerobat;
 
 class Pendaftaran extends BaseController
 {
@@ -112,4 +113,28 @@ class Pendaftaran extends BaseController
         }   
         echo view('/Pendaftaran/form_poli_pasien', $data);
     }
+    public function attempt_poli(){
+        $ModelPasien = new ModelPasienBerobat();
+
+		$ModelPasien->save([
+            'kode_pasien' => $this->request->getVar('kode_pasien'),
+            'poli_berobat' => $this->request->getVar('poli_berobat'),
+            'dokter_berobat' => $this->request->getVar('dokter_berobat'),
+            'tanggal_berobat' => $this->request->getVar('tanggal_berobat'),
+        ]);
+		session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
+		return redirect()->to('/Pendaftaran/pasien_baru');   
+    }
+    public function pasien_berobat(){
+        $db = \Config\Database::connect();
+        $builder = $db->table('pasien_berobat');
+        $builder->select('nama_pasien, pasien_berobat.kode_pasien, id_berobat, poli_berobat, tanggal_berobat, dokter_berobat');
+        $builder->join('pasien', 'pasien.kode_pasien = pasien_berobat.kode_pasien');
+        $query = $builder->get();
+
+        $data['users'] = $query->getResult();
+
+        echo view('/Pendaftaran/pasien_berobat',$data);
+    }
+
 }

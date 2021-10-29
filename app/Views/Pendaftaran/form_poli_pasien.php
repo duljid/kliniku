@@ -9,87 +9,94 @@
                 <?= view('Myth\Auth\Views\_message_block') ?>
             </div>
         </div>
-        <div class="kotak p-5" style="background-color: white">
-            <form action="<?= route_to('register') ?>" method="post">
-                <?= csrf_field() ?>
+        <div class="card" style="background-color: white">
+            <div class="card-header">
+                <h1 class="h4 text-gray-800">Biodata Pasien</h1>
+            </div>
+            <div class="card-body">
                 <div class="row">
-                    <h1 class="h4 text-gray-800">Biodata Pasien</h1>
                     <div class="col">
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <h5>Nama Pasien</h5>
                             <h6><?= $nama_pasien ?></h6>
-                            <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <h5>Jenis Kelamin</h5>
                             <h6><?= $jenis_kelamin ?></h6>
-                            <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <h5>Umur Pasien</h5>
                             <h6><?= $umur_pasien ?> Tahun</h6>
-                            <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <h5>Tanggal Lahir</h5>
                             <h6><?= $tanggal_lahir ?></h6>
-                            <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <h5>Telepon Pasien</h5>
                             <h6><?= $telepon_pasien ?></h6>
-                            <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <h5>Alamat Pasien</h5>
                             <h6><?= $alamat_pasien ?></h6>
-                            <input type="hidden" name="id_dokter" value="<?= user()->id?>">
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
+        </div>
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h1 class="h4 text-gray-800">Daftar Poli</h1>
+                </div>
+                <div class="card-body">
+                <form action="<?= base_url('/pendaftaran/attempt_poli') ?>" method="post">
+                    <?= csrf_field() ?>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 form-floating">
+                                <select class="form-select" name="poli_berobat" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option value="Poli Anak">Poli Anak</option>
+                                    <option value="Poli Umum">Poli Umum</option>
+                                    <option value="Poli Gigi">Poli Gigi</option>
+                                </select>
+                                <label for="floatingSelect">Jenis Poli</label>
+                            </div>
+                            <div class="mb-3 form-floating">
+                                <select class="form-select" name="dokter_berobat" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option value="Abdul Majid">Abdul Majid</option>
+                                    <option value="Jamaludin">Jamaludin</option>
+                                </select>
+                                <label for="floatingSelect">Dokter Poli</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-4">
+                                <h5>Tanggal Daftar</h5>
+                                <h6 id="tanggal"></h6>
+                                <input type="hidden" id="val_tanggal" name="tanggal_berobat">
+                                <input type="hidden" name="kode_pasien" value=<?= $kode_pasien ?>>
+                            </div>
+                            <button class="btn btn-info" style="width: 100%; height: 55px" type="submit"
+                                role="button">Daftar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 </div>
-
 <script>
     $(document).ready(function(){
-        $('#akun').on('change', function() {
-            if($(this).val() == 'Dokter'){
-                document.getElementById('fullname').innerHTML = 'Nama Dokter';
-                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "visible").css("position" , "inherit");
-                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "visible").css("position" , "inherit");
-            }else if($(this).val() == 'Apotek'){
-                // ganti place holder
-                document.getElementById('fullname').innerHTML = 'Nama Apotek';
-
-                // ngilangin tanggal lahir
-                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "hidden").css("position" , "absolute");
-                
-                // default tanggal
-                var now = new Date();
-                var day = ("0" + now.getDate()).slice(-2);
-                var month = ("0" + (now.getMonth() + 1)).slice(-2);
-                var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-                $('#input_tanggal').val(today);
-
-            }else if($(this).val() == 'Rumah Bersalin'){
-                document.getElementById('fullname').innerHTML = 'Nama Rumah Bersalin';
-                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "hidden").css("position" , "absolute");
-
-                // default tanggal
-                var now = new Date();
-                var day = ("0" + now.getDate()).slice(-2);
-                var month = ("0" + (now.getMonth() + 1)).slice(-2);
-                var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-                $('#input_tanggal').val(today);
-            }else{
-                document.getElementById('fullname').innerHTML = 'Nama Lengkap';
-                $('#jenis_kelamin, #tanggal_lahir').css("visibility" , "visible").css("position" , "inherit");
-            }
-        });
+        var now = new Date();
+        var day = ("0" + now.getDate()).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+        $('#tanggal').text(today);
+        $('#val_tanggal').val(today);
     });
 </script>
-<?= $this->endSection(); ?>
+    <?= $this->endSection(); ?>

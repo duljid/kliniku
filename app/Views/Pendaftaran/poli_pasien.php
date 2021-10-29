@@ -4,7 +4,7 @@
 <div class="m-4 pendaftaran">
     <section>
         <div>
-            <h1 class="h3 mb-4 text-gray-800">Pendaftaran Poli Pasien</h1>
+            <h1 class="h3 mb-4 text-gray-800">Data Pasien</h1>
         </div>
         <div class="kotak p-5">
             <table class="table" id="data-list">
