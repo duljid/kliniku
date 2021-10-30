@@ -35,10 +35,10 @@ $routes->get('/', 'Home::index');
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:Administrator']);
 $routes->get('/Admin/index', 'Admin::index', ['filter' => 'role:Administrator']);
 $routes->get('/Admin/buatakun', 'Admin::buatakun', ['filter' => 'role:Administrator']);
-$routes->get('/pendaftaran', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
-$routes->get('/Pendaftaran/index', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
-$routes->get('/Pendaftaran/pasien_baru', 'Pendaftaran::pasien_baru', ['filter' => 'role:Pendaftaran']);
-$routes->get('/Pendaftaran/poli_pasien', 'Pendaftaran::poli_pasien', ['filter' => 'role:Pendaftaran']);
+// $routes->get('/pendaftaran', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
+// $routes->get('/Pendaftaran/index', 'Pendaftaran::index', ['filter' => 'role:Pendaftaran']);
+// $routes->get('/Pendaftaran/pasien_baru', 'Pendaftaran::pasien_baru', ['filter' => 'role:Pendaftaran']);
+// $routes->get('/Pendaftaran/poli_pasien', 'Pendaftaran::poli_pasien', ['filter' => 'role:Pendaftaran']);
 
 
 /*

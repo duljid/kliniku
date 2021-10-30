@@ -48,30 +48,11 @@
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <?php if(in_groups("Administrator")): ?>
-                <a class="nav-link" href="<?= base_url('Admin/index') ?>">
-                    <?php elseif(in_groups("Pendaftaran")): ?>
-                    <a class="nav-link" href="<?= base_url('Pendaftaran/pasien_baru') ?>">
-                        <?php elseif(in_groups("Dokter")): ?>
-                        <a class="nav-link" href="<?= base_url('Dokter') ?>">
-                            <?php elseif(in_groups("Apotek")): ?>
-                            <a class="nav-link" href="<?= base_url('Apotek') ?>">
-                                <?php elseif(in_groups("Rumah Bersalin")): ?>
-                                <a class="nav-link" href="<?= base_url('Rumah Bersalin') ?>">
-                                    <?php endif?>
-                                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                                    <span>Dashboard</span></a>
-            </li>
             <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Menus
             </div>
 
             <!-- Menu Sidebar -->
@@ -159,9 +140,6 @@
                 </div>
             </li>
             <?php endif?>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Heading -->
         </ul>

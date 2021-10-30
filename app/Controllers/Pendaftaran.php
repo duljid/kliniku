@@ -71,6 +71,7 @@ class Pendaftaran extends BaseController
 
         $tanggal_lahir = $this->request->getVar('tanggal_lahir');
         $umur = floor((time() - strtotime($tanggal_lahir)) / 31556926);
+        $tipe_daftar = $this->request->getVar('tipe_daftar');
 
 		$ModelPasien->save([
             'nama_pasien' => $this->request->getVar('nama_pasien'),
@@ -81,7 +82,11 @@ class Pendaftaran extends BaseController
             'umur_pasien' => $umur,
         ]);
 		session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
-		return redirect()->to('/Pendaftaran/pasien_baru');   
+        if($tipe_daftar == "Online"){
+            return redirect()->to('/Home/daftar');   
+        }else{
+            return redirect()->to('/Pendaftaran/pasien_baru');   
+        }
         
     }
     public function poli_pasien()
@@ -116,14 +121,23 @@ class Pendaftaran extends BaseController
     public function attempt_poli(){
         $ModelPasien = new ModelPasienBerobat();
 
+        $tipe_daftar = $this->request->getVar('tipe_daftar');
+
 		$ModelPasien->save([
             'kode_pasien' => $this->request->getVar('kode_pasien'),
             'poli_berobat' => $this->request->getVar('poli_berobat'),
             'dokter_berobat' => $this->request->getVar('dokter_berobat'),
             'tanggal_berobat' => $this->request->getVar('tanggal_berobat'),
         ]);
-		session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
-		return redirect()->to('/Pendaftaran/pasien_baru');   
+
+        if($tipe_daftar == "Online"){
+            session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
+            return redirect()->to('/Home/antrian_saya');   
+        }else{
+            session()->setFlashdata('Pesan', 'Postingan berhasil diedit.');
+            dd($tipe_daftar);
+		    return redirect()->to('/Pendaftaran/pasien_baru');    
+        }	 
     }
     public function pasien_berobat(){
         $db = \Config\Database::connect();
