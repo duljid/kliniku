@@ -6,7 +6,15 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('index');
+        $db = \Config\Database::connect();
+        $builder = $db->table('users');
+        $builder->select('fullname, jenis_dokter, phone, email, user_image');
+        $builder->join('dokter', 'users.id = dokter.id_dokter');
+        $query = $builder->get();
+
+        $data['dokter'] = $query->getResult();
+
+        return view('index', $data);
     }
     public function daftar()
     {
@@ -70,5 +78,25 @@ class Home extends BaseController
         $data['antrian'] = $query->getResult();
 
         echo view('antrian_saya',$data);
+    }
+    public function dokteranak($poli)
+    {
+        if($this->request->isAJAX()){
+            $db      = \Config\Database::connect();
+            // $builder = $db->table('dokter');
+            // $query = $db->query("SELECT * FROM dokter WHERE jenis_dokter = '$poli' ");
+            $builder = $db->table('users');
+            $builder->select('fullname, jenis_dokter, phone, email, user_image');
+            $builder->join('dokter', 'users.id = dokter.id_dokter');
+            $query = $builder->getWhere(['jenis_dokter' => $poli]);
+            $data['dokter'] = $query->getResult();
+
+            $msg = [
+                'data' => view('datadokter', $data)
+            ];
+            echo json_encode($msg);
+        }else{
+            exit('Maaf tidak dapat diproses');
+        }
     }
 }

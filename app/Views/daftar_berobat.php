@@ -59,8 +59,9 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3 form-floating">
-                                <select class="form-select" name="poli_berobat" id="floatingSelect"
+                                <select class="form-select" name="poli_berobat" id="poli"
                                     aria-label="Floating label select example">
+                                    <option value="empty">-- Pilih Jenis Poli --</option>
                                     <option value="Poli Anak">Poli Anak</option>
                                     <option value="Poli Umum">Poli Umum</option>
                                     <option value="Poli Gigi">Poli Gigi</option>
@@ -68,17 +69,23 @@
                                 <label for="floatingSelect">Jenis Poli</label>
                             </div>
                             <div class="mb-3 form-floating">
-                                <select class="form-select" name="dokter_berobat" id="floatingSelect"
-                                    aria-label="Floating label select example">
-                                    <option value="Abdul Majid">Abdul Majid</option>
-                                    <option value="Jamaludin">Jamaludin</option>
+                                <select class="form-select viewdata" id="disabledSelect" name="dokter_berobat" id="floatingSelect"
+                                aria-label="Floating label select example">
+                                    <option value="">-- Pilih Dokter --</option>
                                 </select>
                                 <label for="floatingSelect">Dokter Poli</label>
                             </div>
+                            <!-- <div class="mb-3 form-floating dummy-dokter">
+                                <select class="form-select" id="disabledSelect" name="dokter_berobat" id="floatingSelect"
+                                aria-label="Floating label select example">
+                                    <option value="">-- Pilih Dokter --</option>
+                                </select>
+                                <label for="floatingSelect">Dokter Poli</label>
+                            </div> -->
                         </div>
                         <div class="col">
                             <div class="mb-3 form-floating" id="tanggal_lahir">
-                                <input type="date"
+                                <input type="text"
                                     class="form-control <?php if(session('errors.tanggal_lahir')) : ?>is-invalid<?php endif ?>"
                                     id="input_tanggal" name="tanggal_berobat" placeholder="Tanggal Lahir"
                                     value="<?= old('tanggal_lahir') ?>">
@@ -86,7 +93,7 @@
                                     <input type="hidden" name="tipe_daftar" value="Online">
                                 <label for="floatingInput">Tanggal Berobat</label>
                             </div>
-                            <button class="btn btn-info text-light" style="width: 100%; height: 55px" type="submit"
+                            <button class="btn btn-info text-light" style="width: 100%; height: 55px" id="tekan" type="submit"
                                 role="button">Daftar</button>
                         </div>
                     </div>
@@ -95,4 +102,52 @@
         </div>
     </section>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#poli').on('change', function(){
+
+
+
+
+                $('#tekan').text(nilaijadwaldokter);
+                $('.dummy-dokter').hide();
+                var poli = $(this).val();
+                $.ajax({
+                    url: "<?= site_url('home/dokteranak/') ?>" + poli,
+                    dataType: "json",
+                    success: function(response){
+                        $('.viewdata').html(response.data);
+                    },
+                    error: function(ts) { alert(ts.responseText) }
+                });
+        });
+    });
+    
+    var jadwaldokter = "<?php ?>";
+        
+    const d = new Date();
+
+    const weekday = new Array(7);
+    weekday["Sunday"] = 0;
+    weekday["Monday"] = 1;
+    weekday["Tuesday"] = 2;
+    weekday["Wednesday"] = 3;
+    weekday["Thursday"] = 4;
+    weekday["Friday"] = 5;
+    weekday["Saturday"] = 6;
+
+    let nilaijadwaldokter = weekday[jadwaldokter];
+    $( "#input_tanggal" ).datepicker({
+        minDate: 0,
+        maxDate: "+1M", 
+        beforeShowDay: function(date){
+                var day = date.getDay();
+                if(day == nilaijadwaldokter){
+                    return[true];
+                }else{
+                    return[false];
+                }   
+            }
+    });
+</script>
 <?= $this->endSection(); ?>

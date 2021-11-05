@@ -8,11 +8,7 @@ use App\Models\ModelPasienBerobat;
 
 class Pendaftaran extends BaseController
 {
-    public function index()
-    {     
-        return view('Pendaftaran/index');
-    }
-    public function pasien_baru()    
+    public function index()    
     {     
         $db      = \Config\Database::connect();
 		$builder = $db->table('pasien');

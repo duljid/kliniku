@@ -9,23 +9,46 @@
     <meta name="author" content="Tooplate">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="<?php echo base_url('image/icon.png')?>">
-
-    <!-- CSS only -->
-    <link href="<?php echo base_url('hmm.css')?>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('js/datatables/dataTables.css')?>">
-    <link rel="stylesheet" href="<?php echo base_url('bootstrap5/css/bootstrap.min.css') ?>">
-    <link href="<?php echo base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
     
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('fontawesome/css/all.css')?>" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?php echo base_url('hmm.css')?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('js/datatables/dataTables.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('bootstrap5/css/bootstrap.min.css') ?>">
+
+    <!-- Custom styles for this template-->
+    <link href="<?php echo base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
     
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    
+    <!-- Jquery UI -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Template Landingpage -->
     <link rel="stylesheet" href="<?php echo base_url('css/animate.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('css/owl.carousel.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('css/owl.theme.default.min.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('css/tooplate-style.css')?>">
+
+    <!-- Jquery UI -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <style>
+        .mati{
+            color: red !important;
+            background-color: red !important;
+        }
+    </style>
+
 </head>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -48,34 +71,34 @@
     </header>
     <nav class="navbar shadow-sm navbar-expand-lg navbar-light sticky-top" style="border-bottom: 1px solid #f2f2f2; background-color: #ffffff">
         <div class="container">
-            <a class="navbar-brand" href="#"><img width=120 src="<?php echo base_url("image/Asset 3.png") ?>" alt=""></a>
+            <a class="navbar-brand" href="<?= base_url() ?>/Home"><img width=120 src="<?php echo base_url("image/Asset 3.png") ?>" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item px-2"><a href="<?= base_url('Home') ?>" class="smoothScroll">Home</a></li>
+                    <li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url('Home') ?>" class="smoothScroll">Home</a></li>
                     <?php if(logged_in()):?>
-                        <?php if(in_groups("Pasien")):?><li class="nav-item px-2"><a href="<?= base_url("Home/daftar") ?>">Daftar
+                        <?php if(in_groups("Pasien")):?><li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url("Home/daftar") ?>">Daftar
                                 Berobat</a></li>
-                        <li class="nav-item px-2"><a href="<?= base_url("home/antrian_saya") ?>">Antrian Saya</a></li>
+                        <li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url("home/antrian_saya") ?>">Antrian Saya</a></li>
                         <?php endif ?><?php endif ?>
                             <?php if(logged_in()):?>
-                                <?php if(in_groups("Administrator")):?><li class="nav-item px-2"><a href="<?= base_url("Admin") ?>"
+                                <?php if(in_groups("Administrator")):?><li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url("Admin") ?>"
                                         class="smoothScroll">Dashboard</a></li>
-                                <?php elseif(in_groups("Pendaftaran")): ?><li class="nav-item px-2"><a href="<?= base_url("Pendaftaran") ?>"
+                                <?php elseif(in_groups("Pendaftaran")): ?><li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url("Pendaftaran") ?>"
                                         class="smoothScroll">Dashboard</a>
                                 </li>
-                                <?php elseif(in_groups("Dokter")): ?><li class="nav-item px-2"><a href="<?= base_url("Dokter") ?>"
+                                <?php elseif(in_groups("Dokter")): ?><li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url("Dokter") ?>"
                                         class="smoothScroll">Dashboard</a></li>
-                                <?php elseif(in_groups("Apotek")): ?><li class="nav-item px-2"><a href="<?= base_url("Apotek") ?>"
+                                <?php elseif(in_groups("Apotek")): ?><li class="nav-item px-3" style="font-size:13px"><a href="<?= base_url("Apotek") ?>"
                                         class="smoothScroll">Dashboard</a></li>
-                                <?php elseif(in_groups("Rumah Bersalin")): ?><li class="nav-item px-2"><a
+                                <?php elseif(in_groups("Rumah Bersalin")): ?><li class="nav-item px-3" style="font-size:13px"><a
                                         href="<?= base_url("Rumahbersalin") ?>" class="smoothScroll">Dashboard</a>
-                                </li><?php endif ?><li class="nav-item px-2"><a href="<?= route_to('logout') ?>"
-                                        class="smoothScroll">Logout</a></li><?php else:?><li class="nav-item px-2"><a
+                                </li><?php endif ?><li class="nav-item px-3" style="font-size:13px"><a href="<?= route_to('logout') ?>"
+                                        class="smoothScroll">Logout</a></li><?php else:?><li class="nav-item px-3" style="font-size:13px"><a
                                         href="<?= route_to('login')?>" class="smoothScroll">Login</a></li>
-                                <li class="nav-item px-2"><a href="<?= route_to('register') ?>" class="smoothScroll">Register</a></li>
+                                <li class="nav-item px-3" style="font-size:13px"><a href="<?= route_to('register') ?>" class="smoothScroll">Register</a></li>
                                 <?php endif ?>
                 </ul>
             </div>
@@ -95,7 +118,7 @@
                             kesehatan terbaru dari Kliniku. Gratis.</p>
                         <div class="contact-info">
                             <p><i class="fa fa-phone"></i>0853-6137-0409</p>
-                            <p><i class="fa fa-envelope-o"></i><a href="#">Kliniku@gmail.com</a></p>
+                            <p><i class="fa fa-envelope"></i><a href="#">Kliniku@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +126,7 @@
                     <div class="footer-thumb">
                         <div class="opening-hours">
                             <h4 class="wow fadeInUp" data-wow-delay="0.4s">
-                                JAM OPERASIONAL</h4>
+                                Jam Operasional</h4>
                             <p>Senin - Jumat <span>06:00 - 22:00 </span></p>
                             <p>Sabtu <span>09:00 - 20:00 </span></p>
                             <p>Minggu <span>Tutup</span></p><img src="<?php echo base_url('image/kmkes.jpg')?>"
@@ -138,7 +161,6 @@
         </div>
     </footer>
         <script src="<?php echo base_url('js/jquery.js') ?>"></script>
-        <script src="<?php echo base_url('js/bootstrap.min.js') ?>">
         </script>
         <script src="<?php echo base_url('js/jquery.sticky.js') ?>">
         </script>
@@ -149,7 +171,7 @@
         <script src="<?php echo base_url('js/owl.carousel.min.js') ?>">
         </script>
         <script src="<?php echo base_url('js/custom.js') ?>"></script>
-        < !-- < Start of Tawk.to Script -->
+        <!-- < Start of Tawk.to Script -->
             <script type="text/javascript">
                 var Tawk_API = Tawk_API || {}
 
@@ -171,22 +193,8 @@
             </script>
             <End of Tawk.to Script-->
 
-            <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url('js/jquery/jquery.min.js')?>"></script>
-    <script src="<?php echo base_url('js/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url('js/jquery-easing/jquery.easing.min.js')?>"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="<?php echo base_url('js/sb-admin-2.min.js') ?>"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?php echo base_url('js/chart.js/Chart.min.js')?>"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
-    <script src="<?php echo base_url('js/demo/chart-pie-demo.js')?>"></script>
 
     <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
     <script type="text/javascript" charset="utf8" src="<?= base_url('js/dataTables/jquery.dataTables.js')?>"></script>

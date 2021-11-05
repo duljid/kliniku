@@ -23,9 +23,9 @@
                         <div class="mb-3 form-floating">
                             <select class="form-select" name="jenis_dokter" id="floatingSelect"
                                 aria-label="Floating label select example">
-                                <option value="Dokter Umum">Dokter Umum</option>
-                                <option value="Dokter Anak">Dokter Anak</option>
-                                <option value="Dokter Gigi">Dokter Gigi</option>
+                                <option value="Poli Umum">Poli Umum</option>
+                                <option value="Poli Anak">Poli Anak</option>
+                                <option value="Poli Gigi">Poli Gigi</option>
                             </select>
                             <label for="floatingSelect">Jenis Dokter</label>
                         </div>

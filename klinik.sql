@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Okt 2021 pada 03.32
+-- Waktu pembuatan: 01 Nov 2021 pada 03.04
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -112,9 +112,21 @@ CREATE TABLE `auth_groups_users` (
 
 INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 (1, 40),
+(1, 40),
+(1, 40),
 (2, 51),
-(5, 56),
+(2, 51),
+(2, 51),
+(3, 61),
+(3, 65),
+(3, 66),
+(5, 62),
+(5, 67),
 (6, 60),
+(6, 60),
+(6, 60),
+(7, 59),
+(7, 59),
 (7, 59);
 
 -- --------------------------------------------------------
@@ -309,7 +321,70 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (170, '::1', 'admin@gmail.com', 40, '2021-10-10 08:42:04', 1),
 (171, '::1', 'pendaftaran@gmail.com', 51, '2021-10-10 08:48:49', 1),
 (172, '::1', 'pendaftaran@gmail.com', 51, '2021-10-12 09:32:58', 1),
-(173, '::1', 'admin@gmail.com', 40, '2021-10-12 20:16:04', 1);
+(173, '::1', 'admin@gmail.com', 40, '2021-10-12 20:16:04', 1),
+(174, '::1', 'pendaftaran', NULL, '2021-10-12 23:40:55', 0),
+(175, '::1', 'pendaftaran@gmail.com', 51, '2021-10-12 23:41:06', 1),
+(176, '::1', 'apotek@gmail.com', 59, '2021-10-13 00:29:10', 1),
+(177, '::1', 'admin@gmail.com', 40, '2021-10-13 00:41:46', 1),
+(178, '::1', 'rumahbersalin', NULL, '2021-10-13 00:42:09', 0),
+(179, '::1', 'rumahbersalin@gmail.com', 60, '2021-10-13 00:42:34', 1),
+(180, '::1', 'pendaftaran@gmail.com', 51, '2021-10-13 02:11:52', 1),
+(181, '::1', 'apotek@gmail.com', 59, '2021-10-13 02:14:02', 1),
+(182, '::1', 'pendaftaran@gmail.com', 51, '2021-10-13 02:16:33', 1),
+(183, '::1', 'pendaftaran@gmail.com', 51, '2021-10-13 02:18:12', 1),
+(184, '::1', 'apotek@gmail.com', 59, '2021-10-13 02:22:17', 1),
+(185, '::1', 'pendaftaran@gmail.com', 51, '2021-10-13 02:23:02', 1),
+(186, '::1', 'rumahbersalin', NULL, '2021-10-15 18:19:56', 0),
+(187, '::1', 'rumahbersalin', NULL, '2021-10-15 18:20:04', 0),
+(188, '::1', 'rumahbersalin@gmail.com', 60, '2021-10-15 18:21:02', 1),
+(189, '::1', 'pendaftaran@gmail.com', 51, '2021-10-15 18:23:48', 1),
+(190, '::1', 'admin@gmail.com', 40, '2021-10-15 21:20:20', 1),
+(191, '::1', 'pendaftaran@gmail.com', 51, '2021-10-15 21:37:05', 1),
+(192, '::1', 'duljid', NULL, '2021-10-15 21:43:37', 0),
+(193, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-15 21:43:43', 1),
+(194, '::1', 'rumahbersalin@gmail.com', 60, '2021-10-23 03:56:38', 1),
+(195, '::1', 'abdulmajidard@gmail.com', 56, '2021-10-23 03:57:45', 1),
+(196, '::1', 'pendaftaran@gmail.com', 51, '2021-10-23 03:58:11', 1),
+(197, '::1', 'pendaftaran@gmail.com', 51, '2021-10-23 04:39:28', 1),
+(198, '::1', 'pendaftaran@gmail.com', 51, '2021-10-23 07:16:50', 1),
+(199, '::1', 'pendaftaran@gmail.com', 51, '2021-10-29 02:07:41', 1),
+(200, '::1', 'admin@gmail.com', 40, '2021-10-29 20:24:43', 1),
+(201, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-29 20:29:56', 1),
+(202, '::1', 'admin@gmail.com', 40, '2021-10-29 20:31:30', 1),
+(203, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-29 21:02:06', 1),
+(204, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-29 21:03:16', 1),
+(205, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-29 22:53:46', 1),
+(206, '::1', 'pendaftaran@gmail.com', 51, '2021-10-29 23:46:19', 1),
+(207, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-29 23:49:02', 1),
+(208, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 00:25:27', 1),
+(209, '::1', 'pendaftaran@gmail.com', 51, '2021-10-30 00:31:35', 1),
+(210, '::1', 'duljid', NULL, '2021-10-30 00:32:32', 0),
+(211, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 00:32:39', 1),
+(212, '::1', 'pendaftaran@gmail.com', 51, '2021-10-30 00:34:54', 1),
+(213, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 00:39:10', 1),
+(214, '::1', 'pendaftaran@gmail.com', 51, '2021-10-30 00:39:41', 1),
+(215, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 00:52:54', 1),
+(216, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 04:25:38', 1),
+(217, '::1', 'pendaftaran@gmail.com', 51, '2021-10-30 04:26:16', 1),
+(218, '::1', 'admin@gmail.com', 40, '2021-10-30 04:38:19', 1),
+(219, '::1', 'ahmad@gmail.com', 62, '2021-10-30 04:40:12', 1),
+(220, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 06:03:24', 1),
+(221, '::1', 'admin@gmail.com', 40, '2021-10-30 06:15:37', 1),
+(222, '::1', 'pendaftaran@gmail.com', 51, '2021-10-30 06:16:05', 1),
+(223, '::1', 'pendaftaran@gmail.com', 51, '2021-10-30 06:29:18', 1),
+(224, '::1', 'admin@gmail.com', 40, '2021-10-30 06:29:42', 1),
+(225, '::1', 'admin', NULL, '2021-10-30 06:35:35', 0),
+(226, '::1', 'admin@gmail.com', 40, '2021-10-30 06:35:41', 1),
+(227, '::1', 'syarif', NULL, '2021-10-30 06:47:56', 0),
+(228, '::1', 'syarif', NULL, '2021-10-30 06:48:04', 0),
+(229, '::1', 'admin@gmail.com', 40, '2021-10-30 06:48:15', 1),
+(230, '::1', 'syarif@gmail.com', 64, '2021-10-30 06:49:29', 1),
+(231, '::1', 'abdulmajidard@gmail.com', 61, '2021-10-30 06:53:06', 1),
+(232, '::1', 'nani@gmail.com', 65, '2021-10-30 06:58:31', 1),
+(233, '::1', 'aliyakub727@gmail.com', 66, '2021-10-30 07:05:16', 1),
+(234, '::1', 'admin@gmail.com', 40, '2021-10-30 07:09:35', 1),
+(235, '::1', 'syarif@gmail.com', 67, '2021-10-30 07:11:06', 1),
+(236, '::1', 'admin@gmail.com', 40, '2021-10-31 01:13:36', 1);
 
 -- --------------------------------------------------------
 
@@ -373,6 +448,36 @@ CREATE TABLE `auth_users_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `bersalin`
+--
+
+CREATE TABLE `bersalin` (
+  `no_pasien` int(3) NOT NULL,
+  `nama_pasien` varchar(32) NOT NULL,
+  `umur_pasien` int(2) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `tgl` date NOT NULL,
+  `dokter` varchar(30) NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `bersalin`
+--
+
+INSERT INTO `bersalin` (`no_pasien`, `nama_pasien`, `umur_pasien`, `alamat`, `tgl`, `dokter`, `status`) VALUES
+(1, 'Sinta', 27, 'Bekasi', '2021-10-16', 'Dr Yeni', 'Pendataan'),
+(2, 'Rara', 23, 'Jonggol', '2021-10-23', 'Dr Ruri', 'On Prosess'),
+(3, 'Ratu', 29, 'Jakarta', '2021-10-09', 'Dr Resi', 'On Prosess'),
+(4, 'Susi', 25, 'Jakarta Barat', '2021-10-29', 'Dr Siapa', 'OK'),
+(5, 'Sinta', 27, 'Bekasi', '2021-10-06', 'Dr.Sasa', '-'),
+(6, 'Yuri', 20, 'kp duren', '2021-10-02', 'Dr. Susi', 'Periksa'),
+(7, 'Sika', 21, 'Bogor', '2021-10-15', 'Siska', 'On Prosess'),
+(8, 'Yanisa', 22, 'Bogor', '2021-10-23', 'Dr Sarih', 'On Prosess');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `dokter`
 --
 
@@ -391,7 +496,8 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`jenis_dokter`, `jadwal_praktek`, `id_dokter`, `created_at`, `updated_at`, `deleted_at`, `id`) VALUES
-('Dokter Umum', 'Senin', 56, '2021-10-09 05:29:32', '2021-10-09 05:29:32', NULL, 1);
+('Dokter Anak', 'Rabu', 62, '2021-10-30 04:40:24', '2021-10-30 04:40:24', NULL, 2),
+('Dokter Anak', 'Rabu', 67, '2021-10-30 07:11:34', '2021-10-30 07:11:34', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -415,6 +521,23 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
 (1, '2017-11-20-223112', 'Myth\\Auth\\Database\\Migrations\\CreateAuthTables', 'default', 'Myth\\Auth', 1626235555, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `obat`
+--
+
+CREATE TABLE `obat` (
+  `id_obat` bigint(20) NOT NULL,
+  `kode_obat` varchar(10) NOT NULL,
+  `nama_obat` varchar(255) NOT NULL,
+  `satuan_obat` enum('Botol','Pcs','Strip') NOT NULL,
+  `jenis_obat` enum('Kapsul','Sirup','Tablet') NOT NULL,
+  `stok_obat` bigint(20) NOT NULL,
+  `tgl_exp` date NOT NULL,
+  `kegunaan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -443,7 +566,34 @@ INSERT INTO `pasien` (`kode_pasien`, `nama_pasien`, `alamat_pasien`, `tanggallah
 (1, 'Abdul Majid', ' Villa Asri 2 Blok P18 ', '2011-03-02', 10, '082130302521', '', '2021-10-02 03:18:45', '2021-10-02 03:18:45', NULL),
 (2, 'Jamaludin', ' Villa Asri 2 Blok P18 ', '2016-02-10', 5, '082130302521', 'Laki - laki', '2021-10-02 03:20:12', '2021-10-02 03:20:12', NULL),
 (3, 'Abdul Majid', '', '2021-10-05', -1, '082130302521', 'Perempuan', '2021-10-02 03:22:20', '2021-10-02 03:22:20', NULL),
-(4, 'affafaefea', '', '0000-00-00', 51, '', 'Laki - laki', '2021-10-02 03:41:53', '2021-10-02 03:41:53', NULL);
+(4, 'affafaefea', '', '0000-00-00', 51, '', 'Laki - laki', '2021-10-02 03:41:53', '2021-10-02 03:41:53', NULL),
+(5, 'Abdul Majid Ardiansyah', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', '2001-03-09', 20, '082130302521', 'Laki - laki', '2021-10-30 02:14:56', '2021-10-30 02:14:56', NULL),
+(6, 'Ali Yakub', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', '1990-12-13', 30, '082130302521', 'Laki - laki', '2021-10-30 07:05:37', '2021-10-30 07:05:37', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pasien_berobat`
+--
+
+CREATE TABLE `pasien_berobat` (
+  `id_berobat` int(11) NOT NULL,
+  `kode_pasien` int(11) NOT NULL,
+  `poli_berobat` varchar(20) DEFAULT NULL,
+  `dokter_berobat` varchar(50) DEFAULT NULL,
+  `tanggal_berobat` date DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pasien_berobat`
+--
+
+INSERT INTO `pasien_berobat` (`id_berobat`, `kode_pasien`, `poli_berobat`, `dokter_berobat`, `tanggal_berobat`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'Poli Anak', 'Abdul Majid', '2021-10-23', '2021-10-23 06:30:32', '2021-10-23 06:30:32', NULL),
+(2, 6, 'Poli Anak', 'Abdul Majid', '2021-11-12', '2021-10-30 07:06:39', '2021-10-30 07:06:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -482,9 +632,13 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `username`, `fullname`, `tanggal_lahir`, `jenis_kelamin`, `phone`, `alamat`, `user_image`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (40, 'admin@gmail.com', 'admin', 'Demo Akun Administrator', '2021-09-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$LtKwJ2fFVMAWr..Nx9dEWOnQgPiB.kfS8mdK.2Lc8/z1lwpqfemoO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-18 23:27:45', '2021-09-18 23:27:45', NULL),
 (51, 'pendaftaran@gmail.com', 'pendaftaran', 'Demo Akun Pendaftaran', '2021-09-07', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$pQ.yb4oWp2CBIyXkgcjfUOTs/Q1s6jgBs6hRNOcFh.v01zVwaESie', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-09-29 09:27:02', '2021-09-29 09:27:02', NULL),
-(56, 'abdulmajidard@gmail.com', 'duljid', 'Abdul Majid Ardiansyah', '2001-03-09', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$P6IVlOfNWK9.ciUJd9J/kO7z.KgZ0AfLiJVGB6cEoJgK6deGCSbUO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-08 19:32:58', '2021-10-08 19:32:58', NULL),
 (59, 'apotek@gmail.com', 'apotek', 'Demo Akun Apotek', '2021-10-10', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$ocgAYiNBgMEMm949PG3tpeveR9Sxhj1VcUC7IVqSoq77LTgC59WVu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-10 01:56:09', '2021-10-10 01:56:09', NULL),
-(60, 'rumahbersalin@gmail.com', 'rumahbersalin', 'Demo Rumah Bersalin', '2021-10-13', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$8P/gznfdsJrzPpsqSM4B6uy8sHAk9rnER8UZhagRDpRu7mc9.MgdC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-12 20:17:23', '2021-10-12 20:17:23', NULL);
+(60, 'rumahbersalin@gmail.com', 'rumahbersalin', 'Demo Rumah Bersalin', '2021-10-13', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$8P/gznfdsJrzPpsqSM4B6uy8sHAk9rnER8UZhagRDpRu7mc9.MgdC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-12 20:17:23', '2021-10-12 20:17:23', NULL),
+(61, 'abdulmajidard@gmail.com', 'duljid', 'Abdul Majid Ardiansyah', '2001-03-09', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$ZlX9CQCCGHyfYO/dx8jG3O4VfJ5OUilVL/DMkmTd37rb4oFz2lzpi', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-29 20:29:50', '2021-10-29 20:29:50', NULL),
+(62, 'ahmad@gmail.com', 'ahmad', 'Ahmad', '2019-01-30', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$nOXxuqs3QPvUvJ2kT16zWuvLPE4OAdjPAnYNk5b7JqdYIbfPI.KLW', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-30 04:39:49', '2021-10-30 04:39:49', NULL),
+(65, 'nani@gmail.com', 'nani', 'Nani Ninu Nana', '2000-01-12', 'Perempuan', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$ll5eqpttPUKHrfmcHebnMONyjgEM4ZFsxjYcj681plhHLZpgwBocW', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-30 06:58:23', '2021-10-30 06:58:23', NULL),
+(66, 'aliyakub727@gmail.com', 'ali', 'Ali Yakub', '1990-12-13', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$c9FTM67uHYIu0DzlZlc89OqFoloisOFHsoSV74Q2yZqW1dr0FC6su', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-30 07:05:09', '2021-10-30 07:05:09', NULL),
+(67, 'syarif@gmail.com', 'syarif', 'Dr. Syarifuddin', '2000-03-09', 'Laki - laki', '082130302521', 'Villa Asri 2 Block P No 18 Desa Wanaherang, Kecamatan Gunungputri', 'default.jpg', '$2y$10$feKCI01VpFykQp.li4xf0usscLZZBc4NRceaXMuiQy0fGZGbG1/le', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2021-10-30 07:10:50', '2021-10-30 07:10:50', NULL);
 
 --
 -- Indexes for dumped tables
@@ -558,6 +712,12 @@ ALTER TABLE `auth_users_permissions`
   ADD KEY `user_id_permission_id` (`user_id`,`permission_id`);
 
 --
+-- Indeks untuk tabel `bersalin`
+--
+ALTER TABLE `bersalin`
+  ADD PRIMARY KEY (`no_pasien`);
+
+--
 -- Indeks untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
@@ -571,10 +731,23 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `obat`
+--
+ALTER TABLE `obat`
+  ADD PRIMARY KEY (`id_obat`),
+  ADD UNIQUE KEY `kode_obat` (`kode_obat`);
+
+--
 -- Indeks untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
   ADD PRIMARY KEY (`kode_pasien`);
+
+--
+-- Indeks untuk tabel `pasien_berobat`
+--
+ALTER TABLE `pasien_berobat`
+  ADD PRIMARY KEY (`id_berobat`);
 
 --
 -- Indeks untuk tabel `users`
@@ -610,7 +783,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -634,7 +807,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -643,16 +816,28 @@ ALTER TABLE `migrations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `obat`
+--
+ALTER TABLE `obat`
+  MODIFY `id_obat` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `kode_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `kode_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `pasien_berobat`
+--
+ALTER TABLE `pasien_berobat`
+  MODIFY `id_berobat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
